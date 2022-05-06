@@ -1,0 +1,32 @@
+.fullLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.inlineLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+.fullLoading > img,
+.inlineLoading > img {
+  width: 4rem;
+  height: 4rem;
+}
+.fullLoading > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inlineLoading > h4 {
+  text-transform: capitalize;
+}

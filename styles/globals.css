@@ -1,9 +1,47 @@
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --colorPlaceholder: #757575;
+}
+
+body,
+body[data-theme="dark"] {
+  --colorPrimary: #2e59b4;
+  --colorPrimaryHover: #4a75d3;
+  --colorSecondary: #c6d8ff;
+  --backgroundPrimary: #2e2e2e;
+  --backgroundSecondary: #222222;
+  --backgroundHover: #474747;
+  --textPrimary: #f1f1f1;
+  --colorDanger: #cc0000;
+  --colorDangerHover: #ee1717;
+}
+
 html,
-body {
+body,
+button,
+input,
+textarea {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+svg {
+  height: 1em;
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--backgroundPrimary);
+  color: var(--textPrimary);
 }
 
 a {
@@ -13,4 +51,75 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4,
+p,
+button,
+label,
+input,
+a,
+textarea,
+div {
+  font-size: 1.6rem;
+}
+h5 {
+  font-size: 1.4rem;
+}
+h6,
+small {
+  font-size: 1.2rem;
+}
+
+small {
+  color: #bbbbbb;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  color: var(--textPrimary);
+}
+button:disabled {
+  cursor: default;
+  color: #aaa;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.5rem;
+}
+
+ruby {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  row-gap: 0.4rem;
+}
+rt {
+  display: inline;
+  line-height: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  height: 100vh;
 }

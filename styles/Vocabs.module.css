@@ -1,0 +1,180 @@
+.info,
+.context {
+  flex: 1;
+  max-width: 60rem;
+  border-radius: 1rem;
+  background-color: #000;
+  border: 0.5rem solid #000;
+  overflow: hidden;
+}
+.info > * + *,
+.context > * + * {
+  margin-top: 0.5rem;
+}
+
+.focus {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+  padding: 2rem;
+  background-color: var(--colorPrimary);
+}
+.focus > * {
+  font-size: 4rem;
+  letter-spacing: 0.6rem;
+  text-align: center;
+}
+.focus > h2 {
+  font-weight: 400;
+}
+.focus > .hint {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+}
+.focus > .audioBtn {
+  color: var(--textPrimary);
+  font-size: 4rem;
+  line-height: 4rem;
+  height: 4rem;
+}
+
+.details {
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.info > .details {
+  grid-template-areas:
+    "audio kana kana meaning"
+    "audio reading reading meaning"
+    "sentenceContext sentenceContext sentenceContext sentenceContext"
+    "sentenceMeaning sentenceMeaning sentenceMeaning sentenceMeaning"
+    "subtitle notes notes notes"
+    "subtitle notes notes notes";
+}
+.context > .details {
+  grid-template-areas:
+    "sentenceContext sentenceContext sentenceContext audio"
+    "sentenceMeaning sentenceMeaning sentenceMeaning audio"
+    "kana kana meaning meaning"
+    "reading reading meaning meaning"
+    "subtitle notes notes notes"
+    "subtitle notes notes notes";
+}
+
+.quiz > h4 {
+  background-color: #414141;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.quiz > div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  justify-content: space-between;
+  background-color: #f3dda0;
+  width: 100%;
+  padding: 1rem;
+  min-height: 6rem;
+}
+.quiz > div > * {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #000;
+}
+.quiz > div > button:disabled {
+  color: #aaa;
+}
+.quiz > div > button:only-child {
+  flex: 1;
+}
+.quiz > div > input,
+.quiz > div > p {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 100%;
+  outline: none;
+  letter-spacing: 0.2rem;
+}
+.quiz > div > button:not(:only-child) {
+  height: 3rem;
+  line-height: 3rem;
+}
+.correct > div {
+  background-color: #19b90a;
+}
+.wrong > div {
+  background-color: #ff2424;
+}
+.correct > div > *,
+.wrong > div > * {
+  color: var(--textPrimary);
+}
+
+.details > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--textPrimary);
+  color: #000;
+  text-align: center;
+  padding: 1.6rem 1rem;
+}
+.details > * > p {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.sentenceContext,
+.kana,
+.reading {
+  letter-spacing: 0.2rem;
+}
+
+.sentenceContext {
+  grid-area: sentenceContext;
+}
+.sentenceMeaning {
+  grid-area: sentenceMeaning;
+}
+.meaning {
+  grid-area: meaning;
+}
+.kana {
+  grid-area: kana;
+}
+.reading {
+  grid-area: reading;
+}
+.subtitle {
+  grid-area: subtitle;
+}
+.notes {
+  grid-area: notes;
+}
+.audio {
+  grid-area: audio;
+}
+
+.audioBtn {
+  color: #000;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+}

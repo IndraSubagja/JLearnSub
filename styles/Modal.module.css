@@ -1,0 +1,49 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal > * {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 4rem);
+  height: calc(100vh - 4rem);
+  max-width: 50rem;
+  max-height: 50rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: var(--backgroundPrimary);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.modalTitle {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.modalTitle > * {
+  font-size: 2rem;
+}
+.modalTitle > h1 {
+  margin: 0 auto;
+}
+.modalTitle > button {
+  position: absolute;
+  top: 0;
+}
+.modalTitle > button:first-child {
+  left: 0;
+}
+.modalTitle > button:last-child {
+  right: 0;
+}
+.modalTitle + div {
+  flex: 1;
+  position: relative;
+}

@@ -1,0 +1,28 @@
+.popup {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  background-color: var(--textPrimary);
+  color: var(--backgroundPrimary);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  box-shadow: 0.1rem ​0.1rem 0.3rem #aaa;
+}
+.popup > span:first-child {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.popup > span + p {
+  padding: 0 1rem;
+  border-left: 0.1rem solid #aaa;
+  border-right: 0.1rem solid #aaa;
+}
+.popup > button {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: #aaa;
+}
