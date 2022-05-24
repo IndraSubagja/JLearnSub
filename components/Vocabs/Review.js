@@ -40,10 +40,10 @@ export default function Review({ changeMode, indices, setIndices, isQuiz }) {
           .split(", ")
           .map((option) => {
             const answer = option.toLowerCase();
-            correctAnswers.push(answer);
+            correctAnswers.push(answer.trim());
             if (answer.includes("(")) {
-              correctAnswers.push(answer.replace(/ \(.*\)/, ""));
-              correctAnswers.push(answer.replace(/[()]/g, ""));
+              correctAnswers.push(answer.replace(/\(.*\)/, "").trim());
+              correctAnswers.push(answer.replace(/[()]/g, "").trim());
             }
           });
 
@@ -83,13 +83,6 @@ export default function Review({ changeMode, indices, setIndices, isQuiz }) {
       const quiz = [
         {
           ...review,
-          type: "context",
-          title: "Vocab Reading",
-          withAuto: true,
-          focus: review.sentence.context,
-        },
-        {
-          ...review,
           type: "info",
           title: "Vocab Meaning",
           withAuto: true,
@@ -114,6 +107,13 @@ export default function Review({ changeMode, indices, setIndices, isQuiz }) {
             kanaType: true,
             focus: review.meaning[0],
             options: [review.kana, review.kanji].filter((option) => option),
+          },
+          {
+            ...review,
+            type: "context",
+            title: "Vocab Reading",
+            withAuto: true,
+            focus: review.sentence.context,
           }
         );
 
