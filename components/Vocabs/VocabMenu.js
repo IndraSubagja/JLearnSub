@@ -1,7 +1,8 @@
 import styles from "../../styles/Home.module.css";
 
 export default function VocabMenu({ changeMode, indices, setIndices }) {
-  const convertStringToIndices = (str) => {
+  const convertSetToIndices = (str) => {
+    const sets = [];
     const indices = [];
 
     str.split(",").map((number) => {
@@ -13,15 +14,24 @@ export default function VocabMenu({ changeMode, indices, setIndices }) {
       if (isRangedNumber) {
         const [from, to] = number.split("-");
         for (let n = from - 1; n < to; n++) {
-          const index = parseInt(n);
-          indices.indexOf(index) === -1 && indices.push(index);
+          const setIndex = parseInt(n);
+          sets.indexOf(setIndex) === -1 && sets.push(setIndex);
         }
       } else {
-        const index = parseInt(number - 1);
-        indices.indexOf(index) === -1 && indices.push(index);
+        const setIndex = parseInt(number - 1);
+        sets.indexOf(setIndex) === -1 && sets.push(setIndex);
       }
     });
 
+    sets.map((set) => {
+      const TOTAL = 60;
+      const indicesSet = [...Array(TOTAL).keys()].map(
+        (index) => index + 1 + TOTAL * set
+      );
+      indices.push(...indicesSet);
+    });
+
+    console.log(indices, sets);
     return indices.sort((a, b) => a - b);
   };
 
@@ -31,14 +41,14 @@ export default function VocabMenu({ changeMode, indices, setIndices }) {
 
       <div className={styles.menu}>
         <div>
-          <label htmlFor="index">Enter Words Index:</label>
+          <label htmlFor="index">Enter Words Sets:</label>
           <input
             type="text"
             name="index"
             id="index"
             autoComplete="off"
             onChange={(event) =>
-              setIndices(convertStringToIndices(event.target.value))
+              setIndices(convertSetToIndices(event.target.value))
             }
             placeholder="e.g. 1, 4, 7-10"
           />
