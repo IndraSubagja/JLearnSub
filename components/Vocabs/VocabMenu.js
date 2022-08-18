@@ -31,7 +31,6 @@ export default function VocabMenu({ changeMode, indices, setIndices }) {
       indices.push(...indicesSet);
     });
 
-    console.log(indices, sets);
     return indices.sort((a, b) => a - b);
   };
 
