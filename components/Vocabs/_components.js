@@ -191,6 +191,7 @@ export function Info({ content, state, quizHandler, undoHandler }) {
               <p className={styles.hint}>{content.hint.text}</p>
             )}
             <h2>{content.focus}</h2>
+            <p>{content.subFocus}</p>
           </>
         )}
       </div>

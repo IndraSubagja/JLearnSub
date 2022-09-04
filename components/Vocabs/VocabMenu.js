@@ -26,7 +26,7 @@ export default function VocabMenu({ changeMode, indices, setIndices }) {
     sets.map((set) => {
       const TOTAL = 60;
       const indicesSet = [...Array(TOTAL).keys()].map(
-        (index) => index + 1 + TOTAL * set
+        (index) => index + TOTAL * set
       );
       indices.push(...indicesSet);
     });

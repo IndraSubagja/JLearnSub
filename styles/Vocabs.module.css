@@ -15,8 +15,10 @@
 .focus {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 1rem;
   min-height: 16rem;
   padding: 2rem;
   background-color: var(--colorPrimary);
@@ -28,6 +30,10 @@
 }
 .focus > h2 {
   font-weight: 400;
+}
+.focus > h2 + p {
+  font-size: 2.4rem;
+  letter-spacing: 0.2rem;
 }
 .focus > .hint {
   position: absolute;

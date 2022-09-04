@@ -84,10 +84,11 @@ export default function Review({ changeMode, indices, setIndices, isQuiz }) {
         {
           ...review,
           type: "info",
-          title: "Vocab Meaning",
+          title: "Vocab Writing",
           withAuto: true,
           focus: review.kanji,
-          options: review.meaning,
+          subFocus: review.meaning.join(", "),
+          options: [review.kana, review.kanji].filter((option) => option),
         },
       ];
 
